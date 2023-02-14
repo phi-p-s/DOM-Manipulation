@@ -1,0 +1,1 @@
+const pokeName = document.getElementById("pname");
