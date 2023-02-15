@@ -1,10 +1,12 @@
 const api = "https://pokeapi.co/api/v2/"
 var pokeName = document.getElementById("pname");
-var fetchName = api.concat(pokeName)
 let addButton = document.querySelector('#button');
-addButton.addEventListener("click", ()=>{
-    msg.classList.toggle('reveal');
-});
+
+if (addButton){
+    var fetchName = api.concat(pokeName)
+    addButton.addEventListener("click", getPokemon(fetchName));
+    console.log(fetchName)
+}
 
 function getPokemon(apiLink){
     console.log("HI");
