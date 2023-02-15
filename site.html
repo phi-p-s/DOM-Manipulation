@@ -6,7 +6,7 @@
         Poke Fetcher
     </title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="pokegetter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -15,12 +15,18 @@
             Pokemon Cards
         </h1>
     </header>
-    <form class="form">
-        <label for="pnameForm">Pokemon Name:</label>
-        <br>
-        <input type="text" id="pnameForm" name="pname"><br><br>
-        <input class="add" type="submit" value="Add">
-    </form>
+    <div class="pokemon">
+        <form class="form">
+            <label for="pname">Pokemon Name:</label>
+            <br>
+            <input type="text" id="pname" name="pname"><br><br>
+            <input class="add-button" type="submit" value="Add" id="add-button">
+        </form>
+        <script src="pokegetter.js"></script>
+        <div class="card">
+            <img src="" alt="" id="poke-picture">
+        </div>
+    </div>
 </body>
 
 </html>
