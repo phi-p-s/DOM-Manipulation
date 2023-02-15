@@ -1,16 +1,13 @@
-const api = "https://pokeapi.co/api/v2/"
-var pokeName = document.getElementById("pname");
-let addButton = document.querySelector('#button');
-
-if (addButton){
-    var fetchName = api.concat(pokeName)
-    addButton.addEventListener("click", getPokemon(fetchName));
-    console.log(fetchName)
-}
-
-function getPokemon(apiLink){
-    console.log("HI");
-    fetch(apiLink)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-}
+const url = "https://pokeapi.co/api/v2/pokemon"
+document.getElementById("pnameForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const pokemon = event.target[0].value;
+    let response = fetch('${url}/${pokemon}')
+        .then((data) => data.json())
+        .then((json) => {
+            let parent = document.getElementById("pokemon");
+            let image = document.createElement("img");
+            image.src = json.sprites.front_default;
+            parent.appendChild(image);
+        })
+});
